@@ -1,0 +1,107 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  font-family: 'Amiko', Arial, Helvetica, sans-serif;
+  color: rgba(63, 18, 15);
+  text-transform: uppercase;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(242, 233, 223);
+}
+
+a{
+  color: rgba(63,18,15);
+}
+
+img{
+  height: 30em;
+}
+
+.commentCount{
+  border: 1px solid black;
+}
+
+input[type=text]{
+  height: 30px;
+  width: 200px;
+  background-color: rgba(255,255,255);
+  border-color: transparent;
+  color: black;
+  margin-bottom: 3%;
+}
+
+input[type=text]::placeholder{
+  color: black;
+}
+
+button[type=submit]{
+  margin-top: 3%;
+  background-color:#FFA500;
+  border: none;
+  color:black;
+  height:2em;
+}
+
+.col-sm-6{
+  align-items: center;
+}
+
+.jumbotron{
+  background-color: none;
+}
+
+.btn{
+  text-transform: uppercase;
+  background-color:#eac4d5;
+  margin-top: -15%;
+  margin-left: 70%;
+  border: none;
+  color:black;
+  height:2em;
+}
+
+.likeBtn{
+  background-color:rgb(216, 115, 143);
+  height: 2em;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+/* .profile{
+  margin-left: -4%;
+  font-size: 25px;
+} */
+
+.messages{
+  list-style:none;
+  align-items: center;
+  text-align:center;
+  margin: auto 0;
+}
+
+.message{
+  margin: auto 0;
+}
+
+.caption{
+  width: 15em;
+} 
+
+h4{
+  font-size: 2em;
+  color: #FFA500;
+}
+
+h1{
+  font-size: 3em;
+}
+
+a{
+  font-size:1em;
+  color: black;
+}
+
+.createPost{
+  float: left;
+}

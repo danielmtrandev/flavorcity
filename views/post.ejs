@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Flavor City</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/post.css">
+</head>
+
+<body>
+
+
+  <div class="container">
+
+    <a href="/logout" class="logout">Logout</a>
+
+    <div class="page-header text-center">
+      <img src="/img/flavorcity2.png" id="logo" height="200" width="200">
+
+      <h1><strong>The Eats</strong></h1>
+      <a href="/profile" class="profile">Profile</a>
+      <a href="/feed" class="feed">Feed</a>
+
+    </div>
+
+
+      <!-- <div class="col-sm-6"> -->
+        <ul class="messages">
+          <% for(var i=0; i<posts.length; i++) {%>
+          
+            <li class="message">
+              <img src="../<%= posts[i].img %>" class="post" alt="">
+              <h4>
+                <%= posts[i].caption %>
+              </h4>
+
+              <!-- Comment Form -->
+              <br><br><br>
+              <div class="submitComment">
+              <form action="/comment/<%= posts[i]._id %>" method="POST">
+                <input type="text" placeholder="Comment" name="comment">
+                <br>
+                <button type="submit">Submit</button>
+              </form>
+            </li>
+            <% } %>
+        </ul>
+
+        <br>
+        <h3>Comments</h3>
+        <div id="comments">
+        <%comments.forEach(comment=> {%>
+          <p>
+            <%=comment.comment%>
+          </p>
+          <%})%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

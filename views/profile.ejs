@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Flavor City</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <a href="/logout" class="logout">Logout</a>
+
+    <div class="page-header text-center">
+      <img src="/img/flavorcity2.png" id="logo" height="200" width="200">
+
+      <h1><strong>PROFILE</strong></h1>
+      <a href="/feed" class="feed">Feed</a>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h3>Posts</h3>
+        <ul class="messages">
+          <% for(let i=0; i<posts.length; i++) {%>
+            <li class="message">
+              <a href="/post/<%= posts[i]._id %>">
+                <h4>
+                  <%= posts[i].caption %>
+                </h4>
+                <img src="<%= posts[i].img %>" alt="">
+              </a>
+            </li>
+            <% } %>
+        </ul>
+      </div>
+
+      <div class="createPost">
+        <h2>What's the Eats?</h2>
+        <% if (user.local.email) { %>
+          <form action="/makePost" enctype="multipart/form-data" method="POST">
+            <input type="text" name="caption" placeholder="Location + Meal">
+            <input type="file" name="file-to-upload">
+            <button type="submit">Upload</button>
+          </form>
+      </div>
+      <% } %>
+
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+body{
+    padding-top:80px;
+    word-wrap:break-word;
+    font-family: 'Amiko', Arial, Helvetica, sans-serif;
+    color:rgba(63,18,15);
+    text-transform: uppercase;
+   background-color: rgb(242, 233, 223);
+  }
+
+  .jumbotron{
+    background-color: rgb(247,186,24);
+  }
+  
+  img{
+    margin-top: -10%;
+  }
+
+  p{
+    margin-top: -4%;
+    font-size: 3rem;
+  }
+
+  .btn{
+    text-transform: uppercase;
+    background-color:rgb(221, 72, 38);
+    border: none;
+    color: rgba(255,255,255);
+    height:2em;
+  }

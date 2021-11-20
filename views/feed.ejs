@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Flavor City</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="feed.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <span class="logSpan"><a href="/logout" class="logout">Logout</a></span>
+   
+    <form action="/search" class="form" method="GET">
+      <input type="text" placeholder="Search" name="search" />
+      <button type="submit">🔍</button>
+  </form>
+
+
+    <div class="page-header text-center">
+      <img src="/img/flavorcity2.png" id="logo" height="200" width="200">
+
+      <h1><strong>Share Your Eats!</strong></h1>
+      <a href="/profile" class="profile">Profile</a>
+
+    </div>
+
+    <div class="row">
+
+      <ul class="messages">
+        <% for(let i=0; i<posts.length; i++) {%>
+          <li class="message">
+            <a href="/post/<%= posts[i]._id %>">
+              <img src="<%= posts[i].img %>" alt="">
+            </a>
+              <h4>
+                <%= posts[i].caption %>
+              </h4>
+            <a href="/page/<%= posts[i].postedBy %>" class="user">@<%= posts[i].name %></a>
+            <span class="likeCount" data-id="<%= posts[i]._id %>">
+              <br><br>
+              <%= posts[i].postLikes %>
+            </span>
+            <button class="likeBtn" data-id="<%= posts[i]._id %>">Like</button>
+          </li>
+          <% } %>
+      </ul>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
